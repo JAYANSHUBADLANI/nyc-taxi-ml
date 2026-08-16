@@ -1,5 +1,7 @@
 # NYC Taxi Fare Prediction at Scale (PySpark MLlib)
 
+[![tests](https://github.com/JAYANSHUBADLANI/nyc-taxi-ml/actions/workflows/tests.yml/badge.svg)](https://github.com/JAYANSHUBADLANI/nyc-taxi-ml/actions/workflows/tests.yml)
+
 I built this project as the machine learning companion to my PySpark data pipeline portfolio project. While the sibling project handles the data engineering (moving raw TLC taxi data through bronze, silver, and gold layers), this project handles the machine learning. 
 
 The focus here is demonstrating distributed ML operations using Spark's Pipeline API, feature transformers, and model selection tools on a dataset that does not comfortably fit in a single machine's memory. I predict the `fare_amount` for taxi trips using context and geographical features from the gold table.
