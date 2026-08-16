@@ -1,0 +1,75 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/08/16 07:43:34 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/08/16 07:43:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Reading gold data from data/gold/yellow_tripdata_gold_2023_01...
+Total rows (after sampling): 2998793
+Rows after dropping nulls in critical numeric columns: 2928524
+Performing time-based train/test split...
+Train size: 2331484, Test size: 597040
+Computing baseline...
+--- Baseline Metrics ---
+RMSE: 12.0958
+MAE: 7.3663
+R2: 0.4452
+Training PySpark ML Pipeline (this may take a while)...
+Best Model Parameters:
+  Max Depth: 10
+  Num Trees: 20
+Generating predictions on test set...
+--- Model Metrics ---
+RMSE: 4.7882
+MAE: 2.1677
+R2: 0.9131
+--- Error Breakdown ---
+Top Boroughs with Highest Average Error:
++--------------+------------------+
+|pickup_borough|avg_abs_error     |
++--------------+------------------+
+|N/A           |43.38922527733017 |
+|EWR           |28.636658542965378|
+|Staten Island |7.958700118603559 |
+|Bronx         |6.171067212840097 |
+|Brooklyn      |4.55806262634521  |
++--------------+------------------+
+only showing top 5 rows
+Average Error by Hour of Day:
++-----------+------------------+
+|pickup_hour|     avg_abs_error|
++-----------+------------------+
+|          0| 1.928448414038563|
+|          1| 1.791331084793823|
+|          2|1.8145059828467158|
+|          3|1.9798088815098147|
+|          4|  2.36939627389128|
+|          5|2.6793808101246497|
+|          6| 2.221123168710257|
+|          7|2.0056180568713984|
+|          8| 2.100863737757477|
+|          9|2.2017619808075417|
+|         10|2.2054569722866435|
+|         11| 2.228108646475288|
+|         12| 2.237959560622923|
+|         13|  2.35028067545395|
+|         14| 2.370445152096603|
+|         15|2.5400879720309564|
+|         16|2.3963506108185637|
+|         17|  2.25897804116638|
+|         18|2.0425678050523137|
+|         19|  2.03618337245405|
+|         20|1.9780661444739163|
+|         21|1.9633240956127473|
+|         22|1.9786478722702152|
+|         23| 2.158607430158337|
++-----------+------------------+
+Running Reproducibility Check...
+Refitting pipeline with the best parameters and same seed...
+Reproducibility Metrics:
+RMSE: 4.7882
+MAE: 2.1677
+R2: 0.9131
+RMSE Difference between runs: 0.000000
+Reproducibility check passed.
